@@ -1,0 +1,335 @@
+/*
+Theme Name: jazzicons shinya sato
+Author: Shinya Sato
+Description: WP Theming 2 Conditions Exercise [JazzIcons]
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Version: 0.1
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: jazzicons-ss
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* General ==================== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: 'Lora', serif;
+}
+
+.content-area {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Bebas Neue', cursive;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input {
+  border: 2px solid rgb(245, 250, 255);
+  background-color: rgb(170, 190, 210);
+  color: white;
+  font-size: 1.125em;
+}
+
+input[type='submit'] {
+  cursor: pointer;
+}
+
+.screen-reader-text {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* Header and Footer ========== */
+header,
+footer {
+  padding: 1rem 2%;
+  background-color: rgb(140, 160, 180);
+  text-align: center;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 3em;
+}
+
+.menu-list {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2px;
+}
+
+footer .menu-list {
+  margin-top: 0;
+}
+
+.menu-item {
+  flex: 1 0 20%;
+  padding: 0.5rem;
+  background-color: rgba(170, 190, 210, 0.6);
+}
+
+.menu-item:hover {
+  background-color: rgba(170, 190, 210, 1);
+}
+
+.current-menu-item {
+  font-weight: 700;
+}
+
+.menu-item-home {
+  order: -1;
+}
+
+.category-description p:first-child {
+  font-family: 'Bebas Neue', cursive;
+}
+
+.category-description p:first-child::before {
+  content: '“';
+}
+.category-description p:first-child::after {
+  content: '”';
+}
+
+.category-description p:last-child::before {
+  content: '[ ';
+}
+.category-description p:last-child::after {
+  content: ' ]';
+}
+
+/* Main ======================= */
+.content-area {
+  padding: 1rem 2%;
+}
+
+.site-main {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+.site-main a {
+  color: gray;
+}
+
+.entry-title {
+  margin: 0;
+  color: rgb(140, 160, 180);
+}
+
+.entry-meta {
+  font-size: 0.75em;
+}
+
+.entry-content p {
+  margin-top: 0;
+}
+
+.entry-footer {
+  font-size: 0.75em;
+  text-transform: lowercase;
+}
+
+.categories-tags-wrapper {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+}
+
+.entry-footer-label {
+  font-weight: 700;
+}
+
+/* Archive ==================== */
+.archive-title {
+  margin-top: 0;
+}
+
+/* Search ===================== */
+.search-results-title {
+  margin: 0;
+}
+
+.search-results-description {
+  margin-top: 0;
+}
+
+.search-no-results .content-area {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* 404 ======================== */
+.error404 .content-area {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  background-image: url(images/bg-404-sinatra.jpg);
+}
+
+.error404-wrapper {
+  margin: 0 auto;
+  padding: 1rem;
+  border: 8px solid rgb(192, 192, 192);
+  background-color: rgba(64, 64, 64, 0.9);
+  color: white;
+  text-align: center;
+}
+
+.error404-wrapper a {
+  text-decoration: underline;
+}
+
+.error404-title {
+  margin: 0;
+  font-size: 3rem;
+}
+
+/* Single ========== */
+.single .site-main {
+  display: block;
+}
+
+.single article {
+  max-width: 830px;
+  margin: 0 auto;
+}
+
+.single .entry-title {
+  color: initial;
+}
+
+.single .entry-content-wrapper {
+  display: block;
+}
+
+.single figure {
+  position: relative;
+  width: 100%;
+  height: 0;
+  margin: 0;
+  padding-top: 25px;
+  padding-bottom: calc(720 / 1280 * 100%);
+}
+
+.single iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  /* Header and Footer ========== */
+  header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .header-title-wrapper {
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  .site-title {
+    font-size: 6em;
+    line-height: 1;
+  }
+
+  .header-nav-wrapper {
+    text-align: right;
+  }
+
+  header .menu-list {
+    justify-content: flex-end;
+  }
+
+  footer .menu-list {
+    justify-content: center;
+  }
+
+  .menu-item {
+    flex: 0 0 0;
+  }
+
+  /* Main ======================= */
+  .entry-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: auto 1fr;
+    gap: 0 1rem;
+  }
+
+  .entry-content {
+    grid-row: span 2;
+  }
+
+  .entry-content p {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .site-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .site-main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
