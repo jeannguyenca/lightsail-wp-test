@@ -29,6 +29,7 @@ body {
   flex-direction: column;
   margin: 0;
   font-family: 'Lora', serif;
+  background: red;
 }
 
 .content-area {
